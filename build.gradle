@@ -1,0 +1,65 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version "$SpringBoot"
+    id 'io.spring.dependency-management' version "$SpringDependencyManagement"
+}
+
+println """"
+Welcome to Gradle
+"""
+
+def source_parent = new File("$project.rootDir)").getParent()
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    google()
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation "io.cucumber:cucumber-java8:$cucumberJavaVersion"
+    implementation "io.cucumber:cucumber-java:$cucumberJavaVersion"
+    implementation "io.cucumber:cucumber-junit:$cucumberJunitVersion"
+    implementation "io.cucumber:cucumber-spring:$cucumberSpringVersion"
+    implementation "com.aventstack:extentreports:5.0.9"
+    // https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter
+    implementation 'tech.grasshopper:extentreports-cucumber7-adapter:1.14.0'
+
+
+    implementation "io.rest-assured:rest-assured:$restAssuredVersion"
+    implementation "io.rest-assured:json-path:$restAssuredJsonPathVersion"
+    implementation "io.rest-assured:xml-path:$restAssuredXMLPathVersion"
+
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot
+    implementation 'org.springframework.boot:spring-boot:2.7.1'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.1'
+
+
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    implementation "org.awaitility:awaitility:4.0.3"
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.0'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.18.0'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.0'
+
+
+}
+
+test {
+    systemProperty 'spring.profiles.active',System.getProperty("spring.profiles.active")!=null?System.getProperty("spring.profiles.active"):"QAENV"
+    systemProperty 'cucumber.filter.tags',System.getProperty("cucumber.filter.tags")!=null?System.getProperty("cucumber.filter.tags"):"@none"
+    systemProperty 'cucumber.features',System.getProperty("cucumber.features")!=null?System.getProperty("cucumber.features"):""
+}

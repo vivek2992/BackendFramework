@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <theme>dark</theme>
+        <encoding>UTF-8</encoding>
+        <protocol>http</protocol>
+        <documentTitle>Automated Test Execution Report</documentTitle>
+        <reportName>Automation Execution Report</reportName>
+        <dateFormat>yyyy-MM-dd</dateFormat>
+        <timeFormat>HH:mm:ss</timeFormat>
+        <thumbnailForBase64>true</thumbnailForBase64>
+        <scripts>
+            <![CDATA[
+                $(document).ready(function(){
+                });
+            ]]>
+        </scripts>
+        <styles>
+            <![CDATA[]]]>
+        </styles>
+    </configuration>
+</extentreports>

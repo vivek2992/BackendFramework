@@ -1,0 +1,58 @@
+{
+  "TC_RB_02_001": {
+    "firstname" : "Vivek",
+    "lastname" : "Jeev",
+    "totalprice" : 125,
+    "depositpaid" : true,
+    "bookingdates" : {
+      "checkin" : "2024-10-13",
+      "checkout" : "2024-10-14"
+    },
+    "additionalneeds" : "Breakfast"
+  },
+  "TC_RB_02_002": {
+    "firstname" : "Lavanya",
+    "lastname" : "Vivek",
+    "totalprice" : 150,
+    "depositpaid" : false,
+    "bookingdates" : {
+      "checkin" : "2024-10-14",
+      "checkout" : "2024-10-15"
+    },
+    "additionalneeds" : ""
+  },
+  "TC_RB_02_003": {
+    "firstname" : "Vivek",
+    "lastname" : "Jeevanand",
+    "totalprice" : 175,
+    "depositpaid" : true,
+    "bookingdates" : {
+      "checkin" : "2024-10-13",
+      "checkout" : "2024-10-16"
+    },
+    "additionalneeds" : "Breakfast"
+  },
+  "TC_RB_02_004": {
+    "firstname" : "Lavanya",
+    "lastname" : "Vivek",
+    "totalprice" : 100,
+    "depositpaid" : true,
+    "bookingdates" : {
+      "checkin" : "2024-10-13",
+      "checkout" : "2024-10-14"
+    },
+    "additionalneeds" : "Lunch"
+  },
+  "TC_RB_02_005": {
+    "firstname" : "Viv"
+  },
+  "TC_RB_02_006": {
+    "lastname" : "Sanjeevi",
+    "depositpaid" : false,
+    "bookingdates" : {
+      "checkin" : "2024-10-12",
+      "checkout" : "2024-10-14"
+    },
+    "additionalneeds" : "Dinner"
+  }
+}
