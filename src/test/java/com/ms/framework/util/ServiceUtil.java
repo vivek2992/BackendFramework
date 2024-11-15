@@ -6,6 +6,8 @@ import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 @Component
@@ -45,4 +47,10 @@ public class ServiceUtil {
                 .header("Cookie","token="+token)
                 .delete(url).then().extract().response();
     }
+
+    public Response postWithKey(String url, String body, Map<String,String> header){
+        return given().headers(header)
+                .body(body).post(url).then().log().all().extract().response();
+    }
+
 }
